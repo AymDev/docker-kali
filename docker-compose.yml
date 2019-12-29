@@ -7,7 +7,6 @@ volumes:
 services:
     kali:
         build: ./build
-        container_name: aymdev-kali
         network_mode: "host"
         volumes:
             - pgsql:/var/lib/postgresql
