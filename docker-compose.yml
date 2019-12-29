@@ -11,4 +11,6 @@ services:
         volumes:
             - pgsql:/var/lib/postgresql
             - ./root:/root
+            - /var/run/dbus:/var/run/dbus
+        privileged: true
         entrypoint: /bin/bash
