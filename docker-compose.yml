@@ -1,0 +1,15 @@
+version: "3.7"
+
+volumes:
+    pgsql:
+        name: kali-msf-pgsql
+
+services:
+    kali:
+        build: ./build
+        container_name: aymdev-kali
+        network_mode: "host"
+        volumes:
+            - pgsql:/var/lib/postgresql
+            - ./root:/root
+        entrypoint: /bin/bash
