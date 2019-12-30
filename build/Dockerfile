@@ -1,13 +1,9 @@
-FROM kalilinux/kali-rolling
+FROM aymdev/kali-linux:latest-base
 
 LABEL maintainer="aymericmayeux@gmail.com"
 
 RUN apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-        kali-linux-top10 \
-        man-db \
-        exploitdb \
+    && apt-get install -y \
         network-manager \
     && apt-get autoremove \
     && apt-get clean
