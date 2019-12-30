@@ -2,6 +2,7 @@
 
 Dockerized Kali Linux.
 
+ - installs the `kali-linux-full` metapackage
  - uses the host machine's network
  - mounts the `/root` directory
 
@@ -13,14 +14,20 @@ The volume is made to keep your scripts available on host machine (to edit with 
 
 ## Usage
 
-Just run the `kali` container, it will build the image before starting it:
+Just run the `kali` container:
 ```shell
 docker-compose run --rm kali
 ```
->Please be aware that it takes time to build, this is a large image (~2.67GB).
 
 ## Re-owning your files
 As the Docker containers use the `root` user by default, you won't be able to use files created from the container. To quickly reown all the files in `/root`, just use the script:
 ```sh
 ./scripts/reown.sh
 ```
+
+## About images
+Images are automatically built on [Docker Hub](https://hub.docker.com/repository/docker/aymdev/kali-linux).
+
+The `aymdev/kali-linux:latest-base` is based on the official Kali image and installs the `kali-linux-full` metapackage (heavy and long to install). The `aymdev/kali-linux:latest` is the image to use, which adds other packages needed for some tools.
+
+>Want to build images yourself ? Dockerfiles are in the `/build/` directory.
