@@ -11,12 +11,16 @@ The volume is made to keep your scripts available on host machine (to edit with 
 
 >**Warning:** This probably won't work with *Docker for Windows/Mac* as they run Docker in a VM.
 
-
 ## Usage
 
-Just run the `kali` container:
+If you cloned the **Git** repository, just run the `kali` service with **Compose**:
 ```shell
 docker-compose run --rm kali
+```
+
+If you just pulled the **Docker** image, add some options:
+```sh
+docker run --rm -it --privileged --network host aymdev/kali-linux:latest /bin/bash
 ```
 
 ## Re-owning your files
@@ -31,4 +35,4 @@ Images are automatically built on [Docker Hub](https://hub.docker.com/repository
 The `aymdev/kali-linux:latest` is based on the official Kali image.
 It installs the `kali-linux-full` metapackage (heavy and long to install) and other packages needed for some tools.
 
->Want to build images yourself ? Dockerfiles are in the `/build/` directory.
+>Want to build the image yourself ? Everything needed is in the `/build/` directory.
