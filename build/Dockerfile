@@ -13,4 +13,5 @@ RUN apt-get install -y \
         network-manager \
         pciutils \
     && apt-get autoremove \
-    && apt-get clean
+    && apt-get clean \
+    && updatedb
