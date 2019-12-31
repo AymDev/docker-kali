@@ -28,6 +28,7 @@ As the Docker containers use the `root` user by default, you won't be able to us
 ## About images
 Images are automatically built on [Docker Hub](https://hub.docker.com/repository/docker/aymdev/kali-linux).
 
-The `aymdev/kali-linux:latest-base` is based on the official Kali image and installs the `kali-linux-full` metapackage (heavy and long to install). The `aymdev/kali-linux:latest` is the image to use, which adds other packages needed for some tools.
+The `aymdev/kali-linux:latest` is based on the official Kali image.
+It installs the `kali-linux-full` metapackage (heavy and long to install) and other packages needed for some tools.
 
 >Want to build images yourself ? Dockerfiles are in the `/build/` directory.
